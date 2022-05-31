@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Lato";
+  src: url("../icon/Lato.ttf");
+}
+
+@font-face {
+  font-family: "Linotte";
+  src: url("../icon/Linotte.otf");
+}
+
+@font-face {
+  font-family: "Circe";
+  src: url("../icon/circe.otf");
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-weight: 600;
+  font-family: Lato;
+  word-break: keep-all;
+  text-decoration: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  --color1: #3c5063;
+  --color2: #fa4a4d;
+  --cor3: #ffc10e;
+  --color4: #3db9ec;
+  --color5: #388e3c;
+  --color6: #222332;
+  --color7: #1a1b1e;
+  --atual: #388e3c;
+}
+
+::scrollbar {
+  width: 0px !important;
+}
+
+*::scrollbar {
+  width: 0px !important;
+}
+
+*::-webkit-scrollbar {
+  width: 0px !important;
+}
+
+*::-moz-scrollbar {
+  width: 0px !important;
+}
+
+*::-ms-scrollbar {
+  width: 0px !important;
+}
+
+*::-moz-osx-scrollbar {
+  width: 0px !important;
+}
+
+*::-o-scrollbar {
+  width: 0px !important;
+}
