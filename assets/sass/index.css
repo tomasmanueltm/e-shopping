@@ -208,5 +208,46 @@ section .stact {
 section .stact span {
   color: #fff;
   font-size: .8rem;
+  position: relative;
   letter-spacing: 1.5px;
+}
+
+section .stact span:first-child::before {
+  width: 80px;
+  content: " ";
+  padding: .3px;
+  margin: -1px 1rem 0 0;
+  background: #999;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+section .stact span:last-child {
+  position: relative;
+}
+
+section .stact span:last-child strong {
+  top: -2px;
+  color: #999;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+section .stact span:last-child strong i {
+  top: 2px;
+  right: -2px;
+  float: right;
+  position: relative;
+}
+
+section .stact span:last-child strong::before {
+  top: -4px;
+  width: 70px;
+  content: "";
+  padding: .9px;
+  margin: -1px -8px 0 0;
+  display: inline-block;
+  vertical-align: middle;
+  border-bottom: 1px solid #999;
 }
