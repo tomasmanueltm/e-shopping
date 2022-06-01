@@ -208,10 +208,10 @@ section .stact span:first-child::before {
   width: 65px;
   content: " ";
   padding: .3px;
-  margin: -1px 1.3rem 0 0;
   background: #999;
   display: inline-block;
   vertical-align: middle;
+  margin: -1px 1.3rem 0 0;
 }
 
 section .stact span:last-child {
@@ -246,28 +246,32 @@ section .stact span:last-child strong::before {
 
 section .catalog {
   width: 100%;
-  display: flex;
+  height: 480px;
   position: relative;
 }
 
 section .catalog ul {
   flex: 1;
   left: 0px;
+  display: flex;
   padding: 1rem 0 0;
+  overflow-x: auto;
   position: relative;
 }
 
 section .catalog ul li {
   display: grid;
-  grid-template-columns: 1fr 0fr;
+  grid-template-columns: 1fr 0.1fr;
   grid-gap: 0px;
   align-items: end;
-  background: #f47535;
+  background: var(--f);
 }
 
 section .catalog ul li div._ {
-  height: 405px;
+  height: 100%;
+  display: flex;
   position: relative;
+  gap: 2rem;
 }
 
 section .catalog ul li div._ .tit_ {
@@ -278,6 +282,20 @@ section .catalog ul li div._ .tit_ {
   box-sizing: content-box;
 }
 
+section .catalog ul li div._ .tit_::before {
+  top: 30vh;
+  left: -15px;
+  content: "";
+  width: 50px;
+  z-index: -0;
+  height: 50px;
+  background: var(--f);
+  padding: 10px;
+  border-radius: 0 25%;
+  position: absolute;
+  transform: rotate(43deg);
+}
+
 section .catalog ul li div._ .tit_ h1 {
   float: left;
   height: 240px;
@@ -286,6 +304,8 @@ section .catalog ul li div._ .tit_ h1 {
   position: relative;
   text-align: right;
   line-height: 4rem;
+  overflow: hidden;
+  font-family: Linotte;
   letter-spacing: 5px;
   transform: rotate(-90deg);
   -webkit-text-stroke: 2px rgba(255, 255, 255, 0.5);
@@ -293,64 +313,127 @@ section .catalog ul li div._ .tit_ h1 {
 
 section .catalog ul li div._ .tit_ h1::before {
   top: 0px;
-  lef: 0px;
-  width: 0%;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
   color: #fff;
-  height: 100%;
+  height: 0%;
   transition: .6s;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   content: attr(data-name);
 }
 
 section .catalog ul li div._ .tit_ h1:hover::before {
+  height: 100%;
+}
+
+section .catalog ul li div._ .img {
+  width: 450px;
+  height: 80%;
+  padding: 0.2rem;
+}
+
+section .catalog ul li div._ .img img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 0rem;
+  object-fit: scale-down;
+}
+
+section .catalog ul li div._ .legenda {
+  height: 100%;
+  width: 400px;
+  display: grid;
+  grid-template-columns: repeat(1fr, 1fr);
+  grid-gap: 10px;
+  padding: 2rem 0;
+  align-items: normal;
+  justify-content: space-around;
+}
+
+section .catalog ul li div._ .legenda ._valor p {
+  color: #ddd;
+}
+
+section .catalog ul li div._ .legenda ._valor p span {
+  padding: 0 .2rem;
+  font-weight: 900;
+  font-family: Linotte;
+}
+
+section .catalog ul li div._ .legenda ._valor p span::before {
+  top: -1px;
+  content: "";
+  width: 30px;
+  margin: 0 .5rem;
+  padding: 0 .3px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  border-bottom: 2px solid #ddd;
+}
+
+section .catalog ul li div._ .legenda ._hgrou h1 {
+  color: #eee;
+  width: 320px;
+  font-weight: 900;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  padding: 0 1rem 0 0;
+  font-family: Linotte;
+}
+
+section .catalog ul li div._ .legenda ._hgrou p {
+  color: #ddd;
+  padding: 1rem 0;
+  font-size: .9rem;
+  line-height: 1.6rem;
+}
+
+section .catalog ul li div._ .legenda ._href a {
+  color: #fff;
+}
+
+section .catalog ul li div._ .legenda ._href a i {
+  padding: 0 .5rem;
+  position: relative;
+  vertical-align: middle;
 }
 
 section .catalog ul li div.count {
-  height: 100px;
+  width: 4.5rem;
   padding: 0  0 .1rem;
   text-align: center;
 }
 
-section .catalog ul li div.count h1 {
-  font-size: 3rem;
+section .catalog .controls {
+  lef: 0px;
+  bottom: 0px;
+  width: 100%;
+  padding: 0 10rem;
+  position: absolute;
+  text-align: right;
+}
+
+section .catalog .controls h2 {
+  color: #fff;
+  padding: 0 1rem;
   font-weight: 900;
+  font-size: 2.2rem;
   font-family: Circe;
   position: relative;
+  letter-spacing: 2px;
   display: inline-block;
 }
 
-section .catalog ul li div.count h1::after {
-  top: 2rem;
+section .catalog .controls h2:last-child::before {
+  top: -1rem;
   content: "";
-  width: 20px;
-  right: -2rem;
-  padding: 1px;
-  background: #ccc;
-  position: absolute;
-}
-
-.cards {
-  width: 800px;
-  padding: 2rem 10rem;
+  width: 30px;
+  right: 1.2rem;
   position: relative;
-}
-
-.cards li {
-  width: 100px;
-  height: 100px;
-  display: block;
-  margin: 0 0 4rem;
-  background: #ff043a;
-}
-
-.cards li.x {
-  top: 0px;
-  position: absolute;
-  position-transform: rotate(calc(var(--x)*360deg/2)) translateY(120px);
-}
-
-.cards li.x:last-child {
-  left: 0rem;
+  border-bottom: 2px solid #eee;
+  display: inline-block;
 }
