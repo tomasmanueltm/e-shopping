@@ -182,22 +182,14 @@ header nav span {
 }
 
 section {
-  height: 100vh;
-  width: 100%;
-  padding: 2.3rem 2.8rem;
   position: relative;
   background: var(--back);
   border-top: .1px solid #999;
 }
 
-@media (max-width: 375px) {
-  section {
-    width: 100%;
-    padding: 2.3rem 1rem;
-  }
-}
-
 section .stact {
+  width: 100%;
+  padding: 2.3rem 2.8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -213,10 +205,10 @@ section .stact span {
 }
 
 section .stact span:first-child::before {
-  width: 80px;
+  width: 65px;
   content: " ";
   padding: .3px;
-  margin: -1px 1rem 0 0;
+  margin: -1px 1.3rem 0 0;
   background: #999;
   display: inline-block;
   vertical-align: middle;
@@ -230,24 +222,135 @@ section .stact span:last-child strong {
   top: -2px;
   color: #999;
   cursor: pointer;
+  padding: 0 0 0 .5rem;
   position: relative;
   display: inline-block;
 }
 
 section .stact span:last-child strong i {
   top: 2px;
-  right: -2px;
   float: right;
   position: relative;
 }
 
 section .stact span:last-child strong::before {
   top: -4px;
-  width: 70px;
+  width: 65px;
   content: "";
   padding: .9px;
-  margin: -1px -8px 0 0;
+  margin: -1px -.3rem 0 0;
   display: inline-block;
   vertical-align: middle;
   border-bottom: 1px solid #999;
+}
+
+section .catalog {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+section .catalog ul {
+  flex: 1;
+  left: 0px;
+  padding: 1rem 0 0;
+  position: relative;
+}
+
+section .catalog ul li {
+  display: grid;
+  grid-template-columns: 1fr 0fr;
+  grid-gap: 0px;
+  align-items: end;
+  background: #f47535;
+}
+
+section .catalog ul li div._ {
+  height: 405px;
+  position: relative;
+}
+
+section .catalog ul li div._ .tit_ {
+  width: 240px;
+  display: block;
+  position: relative;
+  padding: 1.1rem 0 0;
+  box-sizing: content-box;
+}
+
+section .catalog ul li div._ .tit_ h1 {
+  float: left;
+  height: 240px;
+  font-size: 4rem;
+  color: transparent;
+  position: relative;
+  text-align: right;
+  line-height: 4rem;
+  letter-spacing: 5px;
+  transform: rotate(-90deg);
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.5);
+}
+
+section .catalog ul li div._ .tit_ h1::before {
+  top: 0px;
+  lef: 0px;
+  width: 0%;
+  color: #fff;
+  height: 100%;
+  transition: .6s;
+  overflow: hidden;
+  position: absolute;
+  content: attr(data-name);
+}
+
+section .catalog ul li div._ .tit_ h1:hover::before {
+  width: 100%;
+}
+
+section .catalog ul li div.count {
+  height: 100px;
+  padding: 0  0 .1rem;
+  text-align: center;
+}
+
+section .catalog ul li div.count h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: Circe;
+  position: relative;
+  display: inline-block;
+}
+
+section .catalog ul li div.count h1::after {
+  top: 2rem;
+  content: "";
+  width: 20px;
+  right: -2rem;
+  padding: 1px;
+  background: #ccc;
+  position: absolute;
+}
+
+.cards {
+  width: 800px;
+  padding: 2rem 10rem;
+  position: relative;
+}
+
+.cards li {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 0 4rem;
+  background: #ff043a;
+}
+
+.cards li.x {
+  top: 0px;
+  position: absolute;
+  position-transform: rotate(calc(var(--x)*360deg/2)) translateY(120px);
+}
+
+.cards li.x:last-child {
+  left: 0rem;
 }
