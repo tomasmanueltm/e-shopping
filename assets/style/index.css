@@ -1,27 +1,29 @@
-@import url("../icon/icons.css");
+@import url("icons.css");
 @font-face {
   font-family: "Lato";
-  src: url("../icon/Lato.ttf");
+  src: url("Lato.ttf");
 }
-
 @font-face {
   font-family: "Linotte";
-  src: url("../icon/Linotte.otf");
+  src: url("Linotte.otf");
 }
-
 @font-face {
   font-family: "Circe";
-  src: url("../icon/circe.otf");
+  src: url("circe.otf");
 }
-
 * {
   margin: 0px;
   padding: 0px;
   list-style: none;
   font-weight: 600;
   font-family: Lato;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   word-break: keep-all;
   text-decoration: none;
+  scrollbar-width: none;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -80,7 +82,6 @@ header {
   flex-direction: row;
   gap: 1rem;
 }
-
 @media (max-width: 375px) {
   header {
     width: 100%;
@@ -92,7 +93,6 @@ header {
     gap: 1rem;
   }
 }
-
 header div {
   display: flex;
   align-items: center;
@@ -100,16 +100,13 @@ header div {
   flex-direction: row;
   gap: 3rem;
 }
-
 header div span {
   display: inline-block;
 }
-
 header div span.toggle {
   width: 50px;
   cursor: pointer;
 }
-
 header div span.toggle strong {
   margin: 0 0 1px;
   position: relative;
@@ -117,177 +114,205 @@ header div span.toggle strong {
   grid-template-columns: 0.3fr 1fr;
   grid-gap: 0.1rem;
 }
-
 header div span.toggle strong i {
   padding: 2px;
   background: #fff;
   display: inline-block;
 }
-
 header div span.toggle strong:last-child {
   top: 2px;
   display: grid;
   grid-template-columns: 1fr 0.3fr;
   grid-gap: 0.1rem;
 }
-
-header div span.a_ {
+header div div.a_ {
+  width: 150px;
   border: none;
   outline: none;
   color: #fff;
   cursor: pointer;
-  font-size: .9rem;
-  letter-spacing: 1.0px;
+  font-size: 0.9rem;
+  position: relative;
+  letter-spacing: 1px;
   vertical-align: middle;
+  background: transparent !important;
 }
-
-header div span.a_ i {
-  top: .0rem;
-  font-size: .7rem;
+@media (max-width: 680px) {
+  header div div.a_ {
+    display: none;
+  }
+}
+header div div.a_ i {
+  top: 0rem;
+  font-size: 0.7rem;
   position: relative;
 }
-
+header div div.a_:hover label[for=lista-categoria] {
+  display: block;
+  transition: 0.5s display;
+}
+header div div.a_ label[for=lista-categoria] {
+  z-index: 1;
+  width: 100%;
+  top: 1.4rem;
+  color: #fff;
+  display: none;
+  position: absolute;
+  padding: 0.7rem 0.5rem;
+  transition: 0.5s display;
+  background: var(--back);
+}
+header div div.a_ label[for=lista-categoria] a {
+  color: #fff;
+  display: block;
+  margin: 0 0 0.7rem;
+}
 header h1 {
   color: #fff;
   font-family: Linotte;
 }
-
 header nav {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0px;
+  gap: 2rem;
 }
-
-header nav ul {
-  float: left;
+@media (max-width: 680px) {
+  header nav ul {
+    display: none;
+  }
 }
-
 header nav ul li {
   margin: 0 0 0 1rem;
   display: inline-block;
   vertical-align: middle;
 }
-
 header nav ul li a {
   color: #fff;
 }
-
 header nav ul li a i {
   font-size: 1.1rem;
 }
-
 header nav span {
   color: #fff;
   font-size: 1rem;
   letter-spacing: 2px;
-  padding: 0 0 0 1rem;
 }
 
 section {
+  height: 100%;
+  overflow: hidden;
   position: relative;
   background: var(--back);
-  border-top: .1px solid #999;
+  border-top: 0.1px solid #999;
 }
-
 section .stact {
   width: 100%;
-  padding: 2.3rem 2.8rem;
+  padding: 2rem 2.8rem 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
   gap: 1rem;
 }
-
 section .stact span {
   color: #fff;
-  font-size: .8rem;
+  font-size: 0.8rem;
   position: relative;
   letter-spacing: 1.5px;
 }
-
 section .stact span:first-child::before {
   width: 65px;
   content: " ";
-  padding: .3px;
+  padding: 0.3px;
   background: #999;
   display: inline-block;
   vertical-align: middle;
   margin: -1px 1.3rem 0 0;
 }
-
 section .stact span:last-child {
   position: relative;
 }
-
 section .stact span:last-child strong {
   top: -2px;
   color: #999;
   cursor: pointer;
-  padding: 0 0 0 .5rem;
+  padding: 0 0 0 0.5rem;
   position: relative;
   display: inline-block;
 }
-
 section .stact span:last-child strong i {
   top: 2px;
   float: right;
   position: relative;
 }
-
 section .stact span:last-child strong::before {
   top: -4px;
   width: 65px;
   content: "";
-  padding: .9px;
-  margin: -1px -.3rem 0 0;
+  padding: 0.9px;
+  margin: -1px -0.3rem 0 0;
   display: inline-block;
   vertical-align: middle;
   border-bottom: 1px solid #999;
 }
-
 section .catalog {
   width: 100%;
-  height: 480px;
   position: relative;
+  height: calc(100vh - 180px);
 }
-
 section .catalog ul {
   flex: 1;
   left: 0px;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   padding: 1rem 0 0;
-  overflow-x: auto;
+  overflow-x: scroll;
   position: relative;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
 }
-
 section .catalog ul li {
-  display: grid;
-  grid-template-columns: 1fr 0.1fr;
-  grid-gap: 0px;
+  flex: none;
+  width: 90%;
   align-items: end;
   background: var(--f);
+  scroll-snap-align: start;
 }
-
+section .catalog ul li:hover div._ .tit_ h1::before, section .catalog ul li.a div._ .tit_ h1::before {
+  height: 100%;
+}
 section .catalog ul li div._ {
   height: 100%;
-  display: flex;
   position: relative;
+  display: flex;
+  align-items: normal;
+  justify-content: space-around;
+  flex-direction: row;
+  gap: 0px;
   gap: 2rem;
 }
-
+@media (max-width: 768px) {
+  section .catalog ul li div._ {
+    flex-direction: column;
+  }
+}
 section .catalog ul li div._ .tit_ {
-  width: 240px;
+  width: 250px;
   display: block;
   position: relative;
-  padding: 1.1rem 0 0;
+  padding: 1rem 0 0;
   box-sizing: content-box;
 }
-
 section .catalog ul li div._ .tit_::before {
   top: 30vh;
   left: -15px;
   content: "";
   width: 50px;
-  z-index: -0;
+  z-index: 0;
   height: 50px;
   background: var(--f);
   padding: 10px;
@@ -295,7 +320,6 @@ section .catalog ul li div._ .tit_::before {
   position: absolute;
   transform: rotate(43deg);
 }
-
 section .catalog ul li div._ .tit_ h1 {
   float: left;
   height: 240px;
@@ -303,14 +327,13 @@ section .catalog ul li div._ .tit_ h1 {
   color: transparent;
   position: relative;
   text-align: right;
-  line-height: 4rem;
   overflow: hidden;
+  line-height: 3.6rem;
   font-family: Linotte;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   transform: rotate(-90deg);
   -webkit-text-stroke: 2px rgba(255, 255, 255, 0.5);
 }
-
 section .catalog ul li div._ .tit_ h1::before {
   top: 0px;
   left: 0px;
@@ -318,63 +341,57 @@ section .catalog ul li div._ .tit_ h1::before {
   width: 100%;
   color: #fff;
   height: 0%;
-  transition: .6s;
+  transition: 0.6s;
   overflow: hidden;
   position: fixed;
   content: attr(data-name);
 }
-
 section .catalog ul li div._ .tit_ h1:hover::before {
   height: 100%;
 }
-
 section .catalog ul li div._ .img {
-  width: 450px;
-  height: 80%;
+  width: 350px;
+  height: 60%;
   padding: 0.2rem;
 }
-
 section .catalog ul li div._ .img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   padding: 0rem;
-  object-fit: scale-down;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
 }
-
 section .catalog ul li div._ .legenda {
-  height: 100%;
   width: 400px;
   display: grid;
   grid-template-columns: repeat(1fr, 1fr);
   grid-gap: 10px;
-  padding: 2rem 0;
+  padding: 2rem 2rem 0 0;
+  height: calc(100% - 150px);
   align-items: normal;
   justify-content: space-around;
 }
-
 section .catalog ul li div._ .legenda ._valor p {
   color: #ddd;
 }
-
 section .catalog ul li div._ .legenda ._valor p span {
-  padding: 0 .2rem;
+  padding: 0 0.2rem;
   font-weight: 900;
   font-family: Linotte;
 }
-
 section .catalog ul li div._ .legenda ._valor p span::before {
   top: -1px;
   content: "";
   width: 30px;
-  margin: 0 .5rem;
-  padding: 0 .3px;
+  margin: 0 0.5rem;
+  padding: 0 0.3px;
   position: relative;
   display: inline-block;
   vertical-align: middle;
   border-bottom: 2px solid #ddd;
 }
-
 section .catalog ul li div._ .legenda ._hgrou h1 {
   color: #eee;
   width: 320px;
@@ -384,30 +401,25 @@ section .catalog ul li div._ .legenda ._hgrou h1 {
   padding: 0 1rem 0 0;
   font-family: Linotte;
 }
-
 section .catalog ul li div._ .legenda ._hgrou p {
   color: #ddd;
   padding: 1rem 0;
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.6rem;
 }
-
 section .catalog ul li div._ .legenda ._href a {
   color: #fff;
 }
-
 section .catalog ul li div._ .legenda ._href a i {
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
   position: relative;
   vertical-align: middle;
 }
-
 section .catalog ul li div.count {
   width: 4.5rem;
-  padding: 0  0 .1rem;
+  padding: 0 0 0.1rem;
   text-align: center;
 }
-
 section .catalog .controls {
   lef: 0px;
   bottom: 0px;
@@ -416,7 +428,6 @@ section .catalog .controls {
   position: absolute;
   text-align: right;
 }
-
 section .catalog .controls h2 {
   color: #fff;
   padding: 0 1rem;
@@ -427,7 +438,6 @@ section .catalog .controls h2 {
   letter-spacing: 2px;
   display: inline-block;
 }
-
 section .catalog .controls h2:last-child::before {
   top: -1rem;
   content: "";
@@ -436,4 +446,4 @@ section .catalog .controls h2:last-child::before {
   position: relative;
   border-bottom: 2px solid #eee;
   display: inline-block;
-}
+}/*# sourceMappingURL=index.css.map */
