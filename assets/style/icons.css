@@ -44,3 +44,12 @@
   .bi-heart-cart::before { content: "\f416"; }
   .bi-heart-full::before { content: "\f415"; }
   .bi-rect-down::before { content: "\f282"; }
+  .bi-whatsapp::before { content: "\f618"; }
+  .bi-lef::before { content: "\f284"; }
+  .bi-righ::before { content: "\f285"; }
+  .bi-rect-down::before { content: "\f282"; }
+  .bi-chat-sms::before { content: "\f262"; }
+  .bi-cash::before { content: "\f247"; }
+ .bi-house::before { content: "\f424"; }
+ .bi-shield::before { content: "\f537"; }
+ .bi-porco-bank::before { content: "\f649"; }

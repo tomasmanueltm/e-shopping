@@ -261,7 +261,7 @@ section .stact span:last-child strong::before {
 section .catalog {
   width: 100%;
   position: relative;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 178.5px);
 }
 section .catalog ul {
   flex: 1;
@@ -277,10 +277,33 @@ section .catalog ul {
 }
 section .catalog ul li {
   flex: none;
-  width: 90%;
+  width: 85%;
   align-items: end;
-  background: var(--f);
+  position: relative;
   scroll-snap-align: start;
+  background: var(--color);
+}
+section .catalog ul li .indicador-next {
+  top: 36%;
+  z-index: 2;
+  color: #fff;
+  display: flex;
+  left: -0.9rem;
+  cursor: pointer;
+  font-weight: 900;
+  position: absolute;
+  align-items: center;
+}
+section .catalog ul li .indicador-next::before {
+  z-index: -1;
+  content: "";
+  left: -0.4rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  position: absolute;
+  border-radius: 0 25%;
+  transform: rotate(43deg);
+  background: var(--color);
 }
 section .catalog ul li:hover div._ .tit_ h1::before, section .catalog ul li.a div._ .tit_ h1::before {
   height: 100%;
@@ -293,6 +316,7 @@ section .catalog ul li div._ {
   justify-content: space-around;
   flex-direction: row;
   gap: 0px;
+  flex-flow: row;
   gap: 2rem;
 }
 @media (max-width: 768px) {
@@ -369,7 +393,7 @@ section .catalog ul li div._ .legenda {
   grid-template-columns: repeat(1fr, 1fr);
   grid-gap: 10px;
   padding: 2rem 2rem 0 0;
-  height: calc(100% - 150px);
+  height: calc(100% - 155px);
   align-items: normal;
   justify-content: space-around;
 }
@@ -404,8 +428,8 @@ section .catalog ul li div._ .legenda ._hgrou h1 {
 section .catalog ul li div._ .legenda ._hgrou p {
   color: #ddd;
   padding: 1rem 0;
-  font-size: 0.9rem;
-  line-height: 1.6rem;
+  font-size: 0.8rem;
+  line-height: 1.4rem;
 }
 section .catalog ul li div._ .legenda ._href a {
   color: #fff;
@@ -421,7 +445,7 @@ section .catalog ul li div.count {
   text-align: center;
 }
 section .catalog .controls {
-  lef: 0px;
+  left: 0px;
   bottom: 0px;
   width: 100%;
   padding: 0 10rem;
