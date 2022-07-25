@@ -213,7 +213,7 @@ section .stact {
   padding: 2rem 2.8rem 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
   gap: 1rem;
 }
@@ -277,7 +277,7 @@ section .catalog ul {
 }
 section .catalog ul li {
   flex: none;
-  width: 85%;
+  width: 85vw;
   align-items: end;
   position: relative;
   scroll-snap-align: start;
@@ -448,7 +448,7 @@ section .catalog .controls {
   left: 0px;
   bottom: 0px;
   width: 100%;
-  padding: 0 10rem;
+  padding: 0 7rem;
   position: absolute;
   text-align: right;
 }
@@ -462,12 +462,28 @@ section .catalog .controls h2 {
   letter-spacing: 2px;
   display: inline-block;
 }
+section .catalog .controls h2:last-child {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.5);
+}
 section .catalog .controls h2:last-child::before {
-  top: -1rem;
   content: "";
-  width: 30px;
+  width: 25px;
+  top: -0.6rem;
   right: 1.2rem;
   position: relative;
-  border-bottom: 2px solid #eee;
   display: inline-block;
+  border-bottom: 2px solid #eee;
+}
+section .catalog .controls h2:last-child::after {
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  color: #fff;
+  height: 60%;
+  transition: 0.6s;
+  overflow: hidden;
+  position: fixed;
+  content: attr(text);
 }/*# sourceMappingURL=index.css.map */
