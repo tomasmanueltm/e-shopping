@@ -18,25 +18,14 @@ btnNext.forEach( (btn)=> {
         
         if(carousel.scrollLeft == 0 || carousel.scrollLeft != 0)
         {
-            carousel.scrollLeft += 870;
             btn.parentElement.classList.add("a");
+            carousel.scrollLeft += 870;
         }
         
-        if(carousel.scrollLeft == 1587)
+        if(carousel.scrollLeft >= 1587)
         {
             carousel.scrollLeft = 0;
             carouselLi[0].classList.add("a");
         }
     })
 })
-
-// function reverter()
-// {
-//     [...carouselLi].shift();
-// }
-
-
-// next.addEventListener('click', function(e){
-//     e.preventDefault();
-//     carousel.scrollLeft -= carousel.getBoundingClientRect().width;
-// })
